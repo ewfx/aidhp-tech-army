@@ -45,6 +45,12 @@ class ContentData(BaseModel):
     Occupation: str
     Interests: str
 
+class JobData(BaseModel):
+    Age: int
+    Income: int
+    Occupation: str
+    Interests: str
+
 @app.post("/recommendProducts")
 def generate_product_recommendation_prompt(user_data: UserData):
     prompt = f"""
@@ -91,6 +97,20 @@ def content_recommend(user_data: ContentData):
     Recommend 3 consumable content items (books, movies, or TV shows). Only list their names.
     """
     return {"recommendations": get_recommendation(prompt)}
+
+@app.post("/career-recommend")
+def career_recommend(user_data: JobData):
+    prompt = f"""
+    Customer Profile:
+    - Age: {user_data.Age}
+    - Occupation: {user_data.Occupation}
+    - Income: {user_data.Income}
+    - Interests: {user_data.Interests}
+
+    Based on the customer's career and interest profile, recommend 3 most relevant career transitions that align with industry trends and growth potential.
+    """
+    return {"recommendations": get_recommendation(prompt)}
+
 
 def get_recommendation(prompt):
     try:
