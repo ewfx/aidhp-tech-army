@@ -1,0 +1,78 @@
+<div class="form-container">
+
+  <form [formGroup]="recommendationForm">
+    <div class="form-group">
+      <label>Age</label>
+      <input type="number" formControlName="Age" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Gender</label>
+      <select formControlName="Gender" class="form-control">
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Marital Status</label>
+      <select formControlName="MaritalStatus" class="form-control">
+        <option>Single</option>
+        <option>Married</option>
+        <option>Divorced</option>
+        <option>Widowed</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>City</label>
+      <input type="text" formControlName="City" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>State</label>
+      <input type="text" formControlName="State" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Country</label>
+      <input type="text" formControlName="Country" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Education</label>
+      <input type="text" formControlName="Education" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Occupation</label>
+      <input type="text" formControlName="Occupation" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Income</label>
+      <input type="number" formControlName="Income" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Interests</label>
+      <textarea formControlName="Interests" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Purchased Products</label>
+      <textarea formControlName="PurchasedProducts" class="form-control"></textarea>
+    </div>
+
+    <button (click)="getRecommendations()" class="btn-primary" [disabled]="loading">
+      {{ loading ? "Fetching..." : "Get Recommendations" }}
+      <span *ngIf="loading" class="loading-spinner"></span>
+    </button>
+  </form>
+
+  <div *ngIf="recommendations">
+    <h3>Recommended Products:</h3>
+    <p>{{ recommendations }}</p>
+  </div>
+</div>

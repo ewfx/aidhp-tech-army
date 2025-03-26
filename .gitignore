@@ -172,3 +172,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+/code/src/FrontEnd/recommendation-app/.angular/
+/code/src/FrontEnd/recommendation-app/.vscode/
+/code/test/cypress/screenshots/
+/code/test/node_modules/
