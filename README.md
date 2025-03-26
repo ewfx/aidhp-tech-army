@@ -26,6 +26,7 @@ Whether assisting with smart shopping, financial planning, or content discovery,
 🖼️ Screenshots:
 
 ![Screenshot 1] ![alt text](image.png)
+![Screenshot 2] ![alt text](image-1.png)
 
 ## 💡 Inspiration
 In today's world, users are overwhelmed with choices and often struggle to decide what suits them best. This challenge inspired me to develop this application. While recommendation systems are widely used for product suggestions and content recommendations, there are still gaps in areas like personalized banking solutions and career progression advice. These niche domains lack robust recommendation engines that can guide users in making informed financial decisions or navigating their career growth. My system was designed to bridge this gap, providing AI-powered, data-driven recommendations to help users make smarter choices in their financial and professional journeys.
@@ -36,9 +37,13 @@ The application leverages Mistral-AI to generate intelligent recommendations acr
 Users engage with the system through the Angular UI, which processes their input and forwards structured prompts to the Python API. The backend, in turn, communicates with Mistral-AI, generating tailored recommendations based on user data.
 
 The application integrates four distinct recommendation systems, offering personalized insights for:
+
 ✔ Product Recommendations – Suggests relevant products based on user preferences and purchase history.
+
 ✔ Career Progression – Identifies optimal career transitions based on current job, experience, and interests.
+
 ✔ Banking Solutions – Recommends suitable financial products aligned with the user's financial profile.
+
 ✔ Content Suggestions – Provides personalized book, movie, and TV show recommendations.
 
 By combining AI-driven insights with a user-friendly interface, the application delivers highly personalized and data-driven recommendations, enhancing decision-making across various domains.
@@ -65,33 +70,42 @@ Ultimately, due to these limitations, we decided to transition entirely to a Gen
    git clone https://github.com/ewfx/aidhp-tech-army.git
    ```
 2. Install dependencies  
+   For UI
    ```sh
-   open code/srcFrontEnd/recommendation-app in command prompt
+   cd code/srcFrontEnd/recommendation-app
    npm install
-   
-   open code/srcBackEnd folder in command prompt
+   ```
+   For API(Python)
+   ```sh
+   cd code/srcBackEnd folder
    pip install -r requirements.txt
    ```
 3. Run the project  
+   For UI
    ```sh
-   open code/srcFrontEnd/recommendation-app in command prompt
-   ng serve  # or python main.py
-
-   open code/src folder in command prompt
-   uvicorn BackEnd.main:app --reload --host 0.0.0.0 --port 8000 --log-level debug
+   cd code/srcFrontEnd/recommendation-app
+   ng serve
+   ```
+   For API(Python)
+   ```sh
+   cd code/src
+   uvicorn BackEnd.main:app --reload --host 0.0.0.0 --port 8000
    ```
 
 4. Run the tests
-   ```sh
    Make sure the backend and frontend are up and running succesfully
-   
-   open code/test folder
+   ```sh
+   cd code/test
    npm install
-   
+   ```
+
    To run tests in headless mode: 
+   ```sh
    npx cypress run
+   ```
 
    To run tests manually from test runner: 
+   ```sh
    npx cypress open
    ```
 
