@@ -46,7 +46,7 @@ Describe the major technical or non-technical challenges your team encountered.
    ```
 3. Run the project  
    ```sh
-   npm start  # or python app.py
+   npm start  # or python main.py
    ```
 
 ## 🏗️ Tech Stack
